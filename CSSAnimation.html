@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <style>
+        button {
+            position: fixed;
+            font-size: 40px;
+            margin-left: 50px;
+        }
+
+        button:hover+div {
+            animation-play-state: paused;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-left: 200px;
+            animation: move 5s 3s infinite steps(10) alternate both;
+        }
+
+        @keyframes move {
+            0% {
+                background-color: blue;
+                margin-left: 0;
+            }
+
+            50% {}
+
+            100% {
+                margin-left: calc(100% - 200px);
+                background-color: black;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>START/STOP</button>
+    <div></div>
+</body>
+
+</html>
